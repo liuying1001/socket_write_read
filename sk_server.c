@@ -58,7 +58,7 @@ int main(void)
         char buffer[BUFFER_SIZE];
         char data[BUFFER_SIZE];
         bzero(buffer, BUFFER_SIZE);
-
+        bzero(data,BUFFER_SIZE);
         if(bufferlen = recv(new_server_socket_fd, buffer, BUFFER_SIZE, 0) < 0)
         {
             perror("Server Recieve Data Failed");
@@ -106,7 +106,7 @@ int main(void)
             bzero(buffer, BUFFER_SIZE);
             int length = 0;
             
-          while((length = read(fp, buffer, byte_count))>0)
+            while((length = read(fp, buffer, byte_count))>0)
             {
                 if(send(new_server_socket_fd, buffer, length, 0) < 0)
                 {
